@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+    <h:form  style="font-size: 15px">
+        <p:fieldset legend="Manutenção de Usuario" style="margin-bottom:20px">
+            <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+                <p:outputLabel value="Digite a senha Atual:"/>
+                <p:password/>
+                <p:outputLabel value="Digite a nova senha:"/>
+                <p:password/>
+                <p:outputLabel value="Repita a nova senha:"/>
+                <p:password/>
+                <p:commandButton value="Confirmar"/>
+            </h:panelGrid>
+        </p:fieldset>
+
+    </h:form>
+</ui:composition>

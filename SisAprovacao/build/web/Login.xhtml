@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Login</title>
+        <h:outputStylesheet library="css" name="style.css"/>
+    </h:head>
+
+    <h:body>
+        
+        <p:layout fullPage="true">
+            <h:form> 
+                <div align="center" style="margin-top: 50px">
+                    <h:graphicImage value="http://bayviewlittleschool.in/school/img/login-icon.jpg" style="margin-left: 100px" />
+                    <p:panelGrid columns="1"> 
+                        Login<p:outputLabel/>
+                        <p:inputText value="#{login.login}"/>
+                        Senha<p:outputLabel/>
+                        <p:password value="#{login.senha}"/>
+                        <p:growl id="log"/>
+                        <p:commandButton  value="Entrar" action="#{login.autenticarUsuario()}"/>
+                    </p:panelGrid> 
+                </div>
+            </h:form>
+        </p:layout>
+    </h:body>
+</html>

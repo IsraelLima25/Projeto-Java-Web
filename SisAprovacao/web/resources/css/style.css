@@ -1,0 +1,16 @@
+.ui-layout-north {
+                z-index:20 !important;
+                overflow:visible !important;;
+                font-size: 13px;
+            }
+
+            .ui-layout-north .ui-layout-unit-content {
+                overflow:visible !important;
+            }
+            
+            .ui-layout-west{
+                font-size: 13px;
+            }
+       
+            
+           

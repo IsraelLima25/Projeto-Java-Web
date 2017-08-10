@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <h:form  style="font-size: 15px">
+
+        <p:fieldset legend="Formulario de Solicitação" style="margin-bottom:20px">
+            <h:panelGrid columns="3" cellpadding="1">
+                <p:outputLabel value="O que:"/>
+                <p:outputLabel value="Porque:"/>
+                <p:outputLabel value="Onde:"/>
+                <p:inputTextarea rows="3" cols="30" autoResize="false" value="#{solicitacaoMB.dtosolicitacao.oque}" />
+                <p:inputTextarea rows="3" cols="30" autoResize="false" value="#{solicitacaoMB.dtosolicitacao.porque}" />
+                <p:inputTextarea rows="3" cols="26" autoResize="false" value="#{solicitacaoMB.dtosolicitacao.onde}"/>
+                <p:outputLabel value="Quando:"/>
+                <p:outputLabel value="Como:"/>
+                <p:outputLabel value="Quem:"/>
+                <p:inputTextarea rows="3" cols="30" autoResize="false" value="#{solicitacaoMB.dtosolicitacao.quando}"/>
+                <p:inputTextarea rows="3" cols="30" autoResize="false" value="#{solicitacaoMB.dtosolicitacao.como}"/>
+                <p:inputTextarea rows="3" cols="26" autoResize="false" value="#{solicitacaoMB.dtosolicitacao.quem}"/>
+                <p:outputLabel value="Quanto:"/>
+                <p:outputLabel value="Orçamento Total:"/>
+                <p:outputLabel value="Orçamento Decisão:"/>
+                <p:inputText size="32" value="#{solicitacaoMB.dtosolicitacao.quanto}"/>
+                <p:inputText size="32" value="#{solicitacaoMB.dtosolicitacao.orcamentototal}"/>
+                <p:inputText size="28" value="#{solicitacaoMB.dtosolicitacao.orcamentodecisao}"/>
+            </h:panelGrid>
+            <h:panelGrid columns="1" cellpadding="4">
+                <p:outputLabel value="Centro de Custo"/>
+            </h:panelGrid>
+            <h:panelGrid columns="3" cellpadding="4">
+
+                <p:selectOneMenu value="#{solicitacaoMB.dtocentrodecusto.idcentrodecusto}" style="width:125px"  effect="fold">
+                    <f:selectItem itemLabel="Selecione..." itemValue="" />
+                    <f:selectItems value="#{solicitacaoMB.enviarCentrosFiltrados()}" itemValue="#{solicitacaoMB.dtocentrodecusto.idcentrodecusto}"/>
+                </p:selectOneMenu><br/>
+
+            </h:panelGrid>
+
+        </p:fieldset>
+        <p:commandButton value="Enviar" actionListener="#{solicitacaoMB.confirmarSolicitacaoAp()}"/>
+    </h:form>
+
+</ui:composition>
+

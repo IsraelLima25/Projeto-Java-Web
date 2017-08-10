@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:form>
+        <p:panelMenu style="width:300px,background-color: green">
+            <p:submenu label="Manutenção de Usuários">
+                <p:submenu label="Aprovador">
+                    <p:menuitem value="Cadastrar Aprovador" icon="ui-icon-check" url="http://localhost:8084/SisAprovacao/faces/Conteudos/conteudoadmCadAp.xhtml"/>
+                </p:submenu>
+                <p:submenu label="Solicitante">
+                    <p:menuitem value="Cadastrar Solicitante" icon="ui-icon-check" url="http://localhost:8084/SisAprovacao/faces/Conteudos/conteudosolCadSol.xhtml"/>
+                </p:submenu>
+                <p:submenu label="Centro de Custo">
+                    <p:menuitem value="Cadastrar Centro de Custo" icon="ui-icon-check" url="http://localhost:8084/SisAprovacao/faces/Conteudos/conteudoadmCadCc.xhtml"/>
+                </p:submenu>
+                <p:submenu label="Opções">
+                    <p:menuitem value="Sair" icon="ui-icon-check" action="#{controleadm.deslogar()}" url="http://localhost:8084/SisAprovacao/faces/Login.xhtml"/>
+                </p:submenu>
+            </p:submenu>
+            <p:separator/>
+        </p:panelMenu>
+    </h:form>
+</ui:composition>

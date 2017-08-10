@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+    <h:form id="formcadAp" style="font-size: 15px">
+
+        <p:fieldset legend="Cadastro Aprovador">
+            <h:panelGrid columns="2" cellpadding="5"> 
+                <p:outputLabel value="Nome:"/>
+                <p:inputText size="35" value="#{aprovadorMB.nome}"/>
+                <p:outputLabel value="Email:"/>
+                <p:inputText size="35" value="#{aprovadorMB.email}"/>
+                <p:outputLabel value="Senha de Acesso:"/>
+                <p:password  size="20" value="#{aprovadorMB.senhaacesso}"/>
+                <p:outputLabel value="Repetir Senha de Acesso:"/>
+                <p:password size="20" value="#{aprovadorMB.repsenhaacesso}"/>
+                <p:commandButton value="cadastrar" actionListener= "#{aprovadorMB.salvar()}" update="geral"/>
+            </h:panelGrid>
+        </p:fieldset>
+
+    </h:form>
+
+</ui:composition>

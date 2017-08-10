@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+
+               
+-->
+<!DOCTYPE html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+    <h:form id="formcadAp"  style="font-size: 15px">
+        <p:fieldset legend="Cadastro Centro de Custo" >
+            <h:panelGrid columns="2" cellpadding="5">
+                <p:outputLabel value="Descrição:"/>
+                <p:inputText size="35" value="#{centroMB.centrodecusto.descricao}"/>
+                <p:outputLabel value="Aprovador:" />
+                <p:selectOneMenu value="#{centroMB.centrodecusto.idcentrodecusto}" style="width:125px"  effect="fold">
+                    <f:selectItem itemLabel="Selecionar Aprovador" itemValue="" />
+                    <f:selectItems value="#{centroMB.carregarListadeAprovadores()}" itemValue="#{centroMB.centrodecusto.idcentrodecusto}"/>
+                </p:selectOneMenu><br/>
+                <p:commandButton value="cadastrar" actionListener="#{centroMB.salvar()}" update="geral"/>
+            </h:panelGrid>
+        </p:fieldset>
+    </h:form>
+</ui:composition>

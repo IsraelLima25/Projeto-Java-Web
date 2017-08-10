@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor. NOME / EMAIL / SENHA DE ACESSO
+-->
+<!DOCTYPE html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <h:form id = "form">
+        <p:growl id="msgs" showDetail="true"/>
+
+        <p:dataTable id="tabela" var="admin" value="#{controleadm.retornarAdm}" editable="true" style="margin-bottom:20px"> 
+            <p:ajax event="rowEdit" listener="#{controleadm.onRowEdit}" update=":form:msgs" />
+            <p:ajax event="rowEditCancel" listener="#{controleadm.onRowCancel}" update=":form:msgs"/>
+
+            <f:facet name="header">
+                Aprovadores Cadastrados
+            </f:facet>
+
+            <p:column headerText="Id">
+                <p:cellEditor>
+                    <f:facet name="output"><h:outputText value="#{admin.id}" /></f:facet>
+                    <f:facet name="input"><p:inputText id="modelInput" value="#{admin.id}" style="width:100%"/></f:facet>
+                </p:cellEditor>
+            </p:column>
+
+            <p:column headerText="Nome">
+                <p:cellEditor>
+                    <f:facet name="output"><h:outputText value="#{admin.nome}" /></f:facet>
+                    <f:facet name="input"><p:inputText value="#{admin.nome}" style="width:100%"/></f:facet>
+                </p:cellEditor>
+            </p:column>
+            <p:column headerText="Email">
+                <p:cellEditor>
+                    <f:facet name="output"><h:outputText value="#{admin.email}" /></f:facet>
+                    <f:facet name="input"><p:inputText  value="#{admin.email}" style="width:100%"/></f:facet>
+                </p:cellEditor>
+            </p:column>
+
+            <p:column headerText="Permissao">
+                <p:cellEditor>
+                    <f:facet name="output"><h:outputText value="#{admin.permi}" /></f:facet>
+                    <f:facet name="input"><p:inputText  value="#{admin.permi}" style="width:100%"/></f:facet>
+                </p:cellEditor>
+            </p:column>
+
+            <p:column headerText="Senha">
+                <p:cellEditor>
+                    <f:facet name="output"><h:outputText value="#{admin.senha}" /></f:facet>
+                    <f:facet name="input"><p:inputText  value="#{admin.senha}" style="width:100%"/></f:facet>
+                </p:cellEditor>
+            </p:column>
+
+            <p:column style="width:32px">
+                <p:rowEditor />
+            </p:column>
+
+        </p:dataTable>
+    </h:form>
+</ui:composition>
