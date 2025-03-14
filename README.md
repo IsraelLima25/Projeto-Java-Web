@@ -1,2 +1,2 @@
 # Projeto-Java-Web
-Sistema de Aprovação
+Projeto do projeto integrador do III semestre do curso de analise e desenvolvimento de sistemas.
